@@ -1,0 +1,28 @@
+graph TD
+    A["📄 INPUT: Original Academic Marksheet Image"] --> B["Processing Split"]
+    
+    B --> C["PIPELINE A: HYBRID MODEL<br/>(High Accuracy)"]
+    B --> D["PIPELINE B: BASE MODEL<br/>(Standard Accuracy)"]
+    
+    C --> C1["Modified YOLOv8<br/>Text Detection"]
+    C1 --> C2["TrOCR Fallback<br/>Text Recognition"]
+    C2 --> C3["✓ Fallback Mechanism<br/>Enhanced Accuracy"]
+    C3 --> C4["OUTPUT A: HYBRID PIPELINE<br/>High Confidence Results"]
+    
+    D --> D1["Base YOLOv8<br/>Text Detection & Recognition"]
+    D1 --> D2["⚠️ No Fallback<br/>Standard Accuracy"]
+    D2 --> D3["OUTPUT B: BASE YOLOv8<br/>Direct Results"]
+    
+    C4 --> E["Comparison Results"]
+    D3 --> E
+    
+    E --> F["Metrics Analysis<br/>Cell Accuracy | CER | WER"]
+    
+    style A fill:#4A90E2,stroke:#2E5C8A,stroke-width:3px,color:#fff
+    style C fill:#2E8B57,stroke:#1a5a3a,stroke-width:2px,color:#fff
+    style D fill:#D97706,stroke:#9c4d0d,stroke-width:2px,color:#fff
+    style C3 fill:#10B981,stroke:#047857,stroke-width:2px,color:#fff
+    style D2 fill:#F59E0B,stroke:#c1660c,stroke-width:2px,color:#fff
+    style C4 fill:#059669,stroke:#045a48,stroke-width:2px,color:#fff
+    style D3 fill:#EA8C55,stroke:#b8581f,stroke-width:2px,color:#fff
+    style F fill:#667EEA,stroke:#3F51B5,stroke-width:2px,color:#fff

@@ -1,0 +1,9 @@
+graph LR
+    Input["Academic Marksheet"] --> YOLOv8["Base YOLOv8<br/>Detection & Recognition"]
+    YOLOv8 --> Process["Direct Processing<br/>No Fallback"]
+    Process --> Output["⚠️ Output B:<br/>Standard Results"]
+    
+    style Input fill:#4A90E2,color:#fff
+    style YOLOv8 fill:#D97706,color:#fff
+    style Process fill:#F59E0B,color:#fff
+    style Output fill:#EA8C55,color:#fff

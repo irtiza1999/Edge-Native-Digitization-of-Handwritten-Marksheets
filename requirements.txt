@@ -1,0 +1,24 @@
+ultralytics==8.2.103
+albumentations
+opencv-python-headless<4.10
+pandas
+openpyxl
+scikit-learn
+tqdm
+PyYAML
+transformers
+Pillow
+opencv-python
+scipy
+torch
+torchvision
+torchaudio
+jiwer
+paddleocr
+pytesseract
+
+# Protobuf is required by `transformers` tokenizers
+protobuf>=3.20.0
+
+# NOTE: For GPU support, install a CUDA-enabled `torch` release matching your GPU/CUDA
+# See: https://pytorch.org/get-started/locally

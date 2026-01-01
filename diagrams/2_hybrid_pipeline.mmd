@@ -1,0 +1,16 @@
+graph LR
+    Input["Academic Marksheet"] --> YOLOv8Det["Modified YOLOv8<br/>Detection Stage"]
+    YOLOv8Det --> Decision{"Text Region<br/>Detected?"}
+    Decision -->|Yes| TrOCR["TrOCR Fallback<br/>Recognition"]
+    Decision -->|No| YOLOv8Rec["YOLOv8 Recognition<br/>Fallback Option"]
+    TrOCR --> Confidence{"High<br/>Confidence?"}
+    YOLOv8Rec --> Confidence
+    Confidence -->|Yes| Output["✓ Output A:<br/>High-Accuracy Results"]
+    Confidence -->|No| Fallback["Fallback Processing"]
+    Fallback --> Output
+    
+    style Input fill:#4A90E2,color:#fff
+    style YOLOv8Det fill:#2E8B57,color:#fff
+    style TrOCR fill:#10B981,color:#fff
+    style Output fill:#059669,color:#fff
+    style Fallback fill:#F3A835,color:#fff
